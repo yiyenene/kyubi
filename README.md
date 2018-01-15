@@ -8,13 +8,13 @@ require "kyubi/railtie"
 ```
 
 In `app/views/layout/application.html.erb`
-```ruby
+```
 <%= kyubi_stylesheet_link_tag media: 'all' %>
 <%= kyubi_javascript_include_tag 'data-turbolinks-track' => 'reload' %>
 ```
 
 ### Assets
-Kyubi expects `app/assets/views` folder has same structures with `app/views` folder.
+Kyubi expects `app/assets/views` directory has same structures with `app/views` directory.
 ```
 app  
 +-- assets  
@@ -31,7 +31,7 @@ app
 ```
 
 when top/index view rendering, index.css and index.js are loaded by kyubi tag helper.  
-※ `shared` is also loaded with same controllers.
+※ `shared` is also loaded when execute same controller action.
 
 ## Installation
 Add this line to your application's Gemfile:
