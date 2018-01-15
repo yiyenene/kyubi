@@ -1,0 +1,48 @@
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/BlockLength:
+  Max: 120
+
+Metrics/LineLength:
+  Max: 300
+
+Metrics/MethodLength:
+  Max: 50
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Exclude:
+    - "db/fixtures/**/*"
+
+Style/TrivialAccessors:
+  AllowDSLWriters: true
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
