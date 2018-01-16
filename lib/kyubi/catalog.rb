@@ -16,13 +16,10 @@ module Kyubi
       end
 
       def load
-        @stylesheets = {}
-        @javascripts = {}
+        initialize_value
         root = Rails.root.join(Rails.application.config.kyubi.asset_root)
         Dir.glob("#{root}/*").each do |d|
           dir_name = d.split("/").last
-          @stylesheets[dir_name] = []
-          @javascripts[dir_name] = []
           Dir.entries(d).each do |f|
             next if [".", ".."].include?(f)
             file, ext = f.split(".") # TOOD: better method
@@ -31,6 +28,13 @@ module Kyubi
           end
         end
       end
+
+      private
+
+        def initialize_value
+          @stylesheets = Hash.new { |h, k| h[k] = [] }
+          @javascripts = Hash.new { |h, k| h[k] = [] }
+        end
     end
   end
 end

@@ -27,9 +27,15 @@ class TagHelperTest < ActionView::TestCase
     )
   end
 
-  test "kyubi_javascript_include_tag when no files" do
+  test "kyubi_javascript_include_tag when no action file" do
     @view = ActionView::Base.new
     @view.controller = controller_mock("home", "index2")
+    assert_nil(@view.kyubi_javascript_include_tag("data-turbolinks-track" => "reload"))
+  end
+
+  test "kyubi_javascript_include_tag when no controller directory" do
+    @view = ActionView::Base.new
+    @view.controller = controller_mock("top", "index")
     assert_nil(@view.kyubi_javascript_include_tag("data-turbolinks-track" => "reload"))
   end
 end

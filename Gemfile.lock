@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kyubi (0.1.0)
+    kyubi (0.1.1)
       rails (~> 5.1.4)
 
 GEM
